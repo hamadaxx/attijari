@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { profileApi } from '../../api';
+import { profileApi, financialApi } from '../../api';
+import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
-import { TrendingUp, Award, Zap, AlertTriangle, CheckCircle } from 'lucide-react';
+import { TrendingUp, Award, AlertTriangle, CheckCircle, DollarSign, ArrowRight } from 'lucide-react';
 import { format } from 'date-fns';
 import { fr } from 'date-fns/locale';
 
@@ -32,6 +33,7 @@ export default function ScorePage() {
   const [profile, setProfile] = useState(null);
   const [history, setHistory] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     Promise.all([profileApi.getMe(), profileApi.getScoreHistory()])
@@ -46,7 +48,8 @@ export default function ScorePage() {
   if (loading) return <div style={{ padding: '32px 40px', color: '#9ca3af' }}>Chargement…</div>;
   if (!profile) return null;
 
-  const se = profile.intelligenceScore || 0;
+  const se  = profile.intelligenceScore      || 0;
+  const svf = profile.financialViabilityScore ?? null;
   const recentTypes = new Set(history.slice(0, 10).map(e => e.type));
 
   // Gauge to next threshold
@@ -85,22 +88,53 @@ export default function ScorePage() {
         </div>
       )}
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, marginBottom: 24 }}>
-        {/* Score card */}
-        <div style={{ background: 'white', borderRadius: 12, padding: '28px 32px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
-          <div style={{ fontSize: 13, fontWeight: 600, color: '#6b7280', marginBottom: 8 }}>Score d'Engagement total</div>
-          <div style={{ fontSize: 56, fontWeight: 900, color: '#F8B618', lineHeight: 1, marginBottom: 4 }}>{se}</div>
-          <div style={{ fontSize: 13, color: '#9ca3af', marginBottom: 24 }}>points</div>
+      {/* ── Score cards row ─────────────────────────────────────────── */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 16, marginBottom: 24 }}>
 
-          {/* Thresholds */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        {/* SE card */}
+        <div style={{ background: 'white', borderRadius: 12, padding: '24px 28px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ fontSize: 11, fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Score d'Engagement</div>
+          <div style={{ fontSize: 52, fontWeight: 900, color: '#F8B618', lineHeight: 1, marginBottom: 2 }}>{se}</div>
+          <div style={{ fontSize: 12, color: '#9ca3af', marginBottom: 20 }}>points</div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             <ThresholdBar se={se} threshold={THRESHOLD_VENTURE} label="Venture Studio" color="#8b5cf6" />
             <ThresholdBar se={se} threshold={THRESHOLD_FINANCING} label="Smart Financing" color="#f59e0b" />
           </div>
         </div>
 
+        {/* Financial viability card */}
+        <div style={{ background: 'white', borderRadius: 12, padding: '24px 28px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
+          <div style={{ fontSize: 11, fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Viabilité Financière</div>
+          {svf !== null && svf > 0 ? (
+            <>
+              <div style={{ fontSize: 52, fontWeight: 900, lineHeight: 1, marginBottom: 2,
+                color: svf >= 70 ? '#16a34a' : svf >= 40 ? '#F8B618' : '#E8543F' }}>{svf}</div>
+              <div style={{ fontSize: 12, color: '#9ca3af', marginBottom: 12 }}>/100</div>
+              <div style={{ height: 6, background: '#f3f4f6', borderRadius: 4, overflow: 'hidden', marginBottom: 10 }}>
+                <div style={{ height: '100%', width: `${svf}%`, borderRadius: 4, transition: 'width 0.5s',
+                  background: svf >= 70 ? '#16a34a' : svf >= 40 ? '#F8B618' : '#E8543F' }} />
+              </div>
+              <div style={{ fontSize: 12, color: svf >= 70 ? '#16a34a' : svf >= 40 ? '#92650a' : '#991b1b', fontWeight: 600 }}>
+                {svf >= 70 ? 'Viabilité solide' : svf >= 40 ? 'Viabilité modérée' : 'Viabilité faible'}
+              </div>
+            </>
+          ) : (
+            <div>
+              <div style={{ fontSize: 18, fontWeight: 700, color: '#d1d5db', marginBottom: 8 }}>—</div>
+              <div style={{ fontSize: 12, color: '#9ca3af', marginBottom: 14, lineHeight: 1.6 }}>
+                Renseignez vos indicateurs financiers pour obtenir votre score.
+              </div>
+              <button onClick={() => navigate('/financial')}
+                style={{ display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, fontWeight: 600,
+                  color: '#E8543F', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+                Compléter <ArrowRight size={13} />
+              </button>
+            </div>
+          )}
+        </div>
+
         {/* KYB badge + recommended actions */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 14 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {/* KYB status */}
           <div style={{ background: 'white', borderRadius: 10, padding: '16px 20px', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>
             <div style={{ fontSize: 12, fontWeight: 700, color: '#9ca3af', textTransform: 'uppercase', marginBottom: 8 }}>Conformité KYB</div>

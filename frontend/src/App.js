@@ -15,6 +15,7 @@ import CMProfilesPage from './pages/cm/CMProfilesPage';
 import CMKybPage from './pages/cm/CMKybPage';
 import ScorePage from './pages/entrepreneur/ScorePage';
 import KybPage from './pages/entrepreneur/KybPage';
+import FinancialPage from './pages/entrepreneur/FinancialPage';
 import FundDashboard from './pages/fund/FundDashboard';
 import StartupDetailPage from './pages/fund/StartupDetailPage';
 import MentorEventsPage from './pages/mentor/MentorEventsPage';
@@ -43,8 +44,9 @@ export default function App() {
         <Route path="/cm/kyb" element={<PrivateRoute><CMKybPage /></PrivateRoute>} />
         <Route path="/cm/scoring" element={<PrivateRoute><ScoringConfigPage /></PrivateRoute>} />
 
-        <Route path="/score" element={<PrivateRoute><ScorePage /></PrivateRoute>} />
-        <Route path="/kyb" element={<PrivateRoute><KybPage /></PrivateRoute>} />
+        <Route path="/score"     element={<PrivateRoute><ScorePage /></PrivateRoute>} />
+        <Route path="/financial" element={<PrivateRoute><FinancialPage /></PrivateRoute>} />
+        <Route path="/kyb"       element={<PrivateRoute><KybPage /></PrivateRoute>} />
 
         <Route path="/fund/dashboard" element={<PrivateRoute><FundDashboard /></PrivateRoute>} />
         <Route path="/fund/startups" element={<PrivateRoute><FundDashboard /></PrivateRoute>} />

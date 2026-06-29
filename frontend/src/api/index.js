@@ -114,6 +114,12 @@ export const mentorApi = {
   getMentorProfile: (mentorId) => api.get(`/mentor/${mentorId}/profile`),
 };
 
+// ── Viabilité Financière ──────────────────────────────────────────────────
+export const financialApi = {
+  submit: (data) => api.post('/financial/me', data),
+  getMe:  ()     => api.get('/financial/me'),
+};
+
 // ── KYB (US-KYC-01 / US-KYC-02) ──────────────────────────────────────────
 export const kybApi = {
   submit: (data) => api.post('/kyb', data),

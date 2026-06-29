@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import {
   User, Users, Calendar, FileText, BarChart2,
-  LogOut, Settings, TrendingUp, Shield
+  LogOut, Settings, TrendingUp, Shield, DollarSign
 } from 'lucide-react';
 
 const navByRole = {
@@ -12,6 +12,7 @@ const navByRole = {
     { to: '/events',        icon: Calendar,     label: 'Événements'       },
     { to: '/publications',  icon: FileText,     label: 'Publications'     },
     { to: '/score',         icon: TrendingUp,   label: 'Mon Score SE'     },
+    { to: '/financial',     icon: DollarSign,   label: 'Viabilité financière' },
     { to: '/kyb',           icon: Shield,       label: 'Dossier KYB'      },
   ],
   COMMUNITY_MANAGER: [

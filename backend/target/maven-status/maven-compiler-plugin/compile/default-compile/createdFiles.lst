@@ -21,6 +21,7 @@ com\attijari\growth\dto\request\ProfileRequest.class
 com\attijari\growth\controller\ProfileController.class
 com\attijari\growth\model\EntrepreneurProfile$ProfileStatus.class
 com\attijari\growth\model\EntrepreneurProfile$KybStatus.class
+com\attijari\growth\controller\FinancialController.class
 com\attijari\growth\repository\ScoringEventRepository.class
 com\attijari\growth\controller\EventController.class
 com\attijari\growth\service\KybService$1.class
@@ -30,6 +31,7 @@ com\attijari\growth\dto\request\EventRatingRequest.class
 com\attijari\growth\model\Event$EventType.class
 com\attijari\growth\repository\EntrepreneurProfileRepository.class
 com\attijari\growth\dto\request\AuthRequest.class
+com\attijari\growth\service\FinancialService.class
 com\attijari\growth\dto\response\AuthResponse.class
 com\attijari\growth\model\Event$EventStatus.class
 com\attijari\growth\model\ScoringConfig$ScoringConfigStatus.class
@@ -41,6 +43,7 @@ com\attijari\growth\service\NotificationService.class
 com\attijari\growth\model\KybDossier$AuditEntry.class
 com\attijari\growth\service\AuthService.class
 com\attijari\growth\service\ProfileService$1.class
+com\attijari\growth\dto\request\FinancialRequest.class
 com\attijari\growth\config\JwtAuthFilter.class
 com\attijari\growth\exception\GlobalExceptionHandler.class
 com\attijari\growth\repository\UserRepository.class
@@ -48,6 +51,7 @@ com\attijari\growth\exception\BadRequestException.class
 com\attijari\growth\model\Publication$PublicationStatus.class
 com\attijari\growth\service\FundManagerService.class
 com\attijari\growth\service\KybService.class
+com\attijari\growth\model\FinancialData$FundingStage.class
 com\attijari\growth\model\Notification$NotificationType.class
 com\attijari\growth\service\impl\UserDetailsServiceImpl.class
 com\attijari\growth\model\Event.class
@@ -59,6 +63,7 @@ com\attijari\growth\model\KybDossier.class
 com\attijari\growth\controller\AuthController.class
 com\attijari\growth\service\PublicationService.class
 com\attijari\growth\dto\request\PublicationRequest.class
+com\attijari\growth\model\FinancialData.class
 com\attijari\growth\config\SecurityConfig.class
 com\attijari\growth\model\KybDossier$KybStatus.class
 com\attijari\growth\model\User.class

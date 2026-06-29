@@ -43,6 +43,10 @@ public class EntrepreneurProfile {
     private int intelligenceScore = 0;
     private LocalDateTime lastActivityAt; // updated on each scoring event
 
+    // Score de Viabilité Financière (0–100)
+    private int financialViabilityScore = 0;
+    private FinancialData financialData;
+
     // KYB status (US-KYC-01 / US-KYC-02)
     private KybStatus kybStatus = KybStatus.NOT_SUBMITTED;
     private String kybDossierId;
