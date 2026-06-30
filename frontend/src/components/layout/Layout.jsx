@@ -23,12 +23,10 @@ const navByRole = {
     { to: '/cm/scoring',        icon: Settings,  label: 'Grille de scoring'  },
   ],
   FUND_MANAGER: [
-    { to: '/fund/dashboard', icon: BarChart2, label: 'Tableau de bord' },
-    { to: '/fund/startups',  icon: Users,     label: 'Startups'        },
+    { to: '/fund/startups', icon: Users, label: 'Startups' },
   ],
   MENTOR: [
-    { to: '/mentor/events',       icon: Calendar,  label: 'Mes webinars' },
-    { to: '/mentor/deliverables', icon: FileText,  label: 'Livrables'    },
+    { to: '/mentor/events', icon: Calendar, label: 'Mes webinars' },
   ],
 };
 
