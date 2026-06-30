@@ -9,6 +9,7 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
@@ -58,6 +59,13 @@ public class GlobalExceptionHandler {
     public ResponseEntity<ErrorResponse> handleMaxSize(MaxUploadSizeExceededException ex) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(new ErrorResponse("Fichier trop volumineux. Taille maximale : 10 Mo.", 400, LocalDateTime.now()));
+    }
+
+    @ExceptionHandler(ResponseStatusException.class)
+    public ResponseEntity<ErrorResponse> handleResponseStatus(ResponseStatusException ex) {
+        int code = ex.getStatusCode().value();
+        return ResponseEntity.status(ex.getStatusCode())
+                .body(new ErrorResponse(ex.getReason(), code, LocalDateTime.now()));
     }
 
     @ExceptionHandler(Exception.class)

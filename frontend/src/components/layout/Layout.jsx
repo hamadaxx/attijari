@@ -3,7 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import {
   User, Users, Calendar, FileText, BarChart2,
-  LogOut, Settings, TrendingUp, Shield, DollarSign
+  LogOut, Settings, TrendingUp, Shield, DollarSign, Globe, Zap
 } from 'lucide-react';
 
 const navByRole = {
@@ -13,14 +13,16 @@ const navByRole = {
     { to: '/publications',  icon: FileText,     label: 'Publications'     },
     { to: '/score',         icon: TrendingUp,   label: 'Mon Score SE'     },
     { to: '/financial',     icon: DollarSign,   label: 'Viabilité financière' },
+    { to: '/market',        icon: Globe,        label: 'Veille marché'        },
     { to: '/kyb',           icon: Shield,       label: 'Dossier KYB'      },
   ],
   COMMUNITY_MANAGER: [
-    { to: '/cm/dashboard',      icon: BarChart2, label: 'Tableau de bord'   },
+    { to: '/cm/dashboard',      icon: BarChart2, label: 'Tableau de bord'    },
     { to: '/cm/profiles',       icon: Users,     label: 'Profils en attente' },
     { to: '/cm/publications',   icon: FileText,  label: 'Modération'         },
     { to: '/cm/kyb',            icon: Shield,    label: 'Revue KYB'          },
     { to: '/cm/scoring',        icon: Settings,  label: 'Grille de scoring'  },
+    { to: '/cm/intelligence',   icon: Zap,       label: 'Intelligence'       },
   ],
   FUND_MANAGER: [
     { to: '/fund/startups', icon: Users, label: 'Startups' },
@@ -39,7 +41,7 @@ export default function Layout({ children }) {
 
   const ROLE_LABELS = {
     ENTREPRENEUR: 'Entrepreneur',
-    COMMUNITY_MANAGER: 'Admin',
+    COMMUNITY_MANAGER: 'Community Manager',
     FUND_MANAGER: 'Gestionnaire de Fonds',
     MENTOR: 'Mentor',
   };

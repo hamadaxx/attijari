@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 const ROLES = [
   { value: 'ENTREPRENEUR',      label: 'Entrepreneur' },
   { value: 'MENTOR',            label: 'Mentor / Expert' },
-  { value: 'COMMUNITY_MANAGER', label: 'Admin Attijari' },
+  { value: 'COMMUNITY_MANAGER', label: 'Community Manager' },
   { value: 'FUND_MANAGER',      label: 'Gestionnaire de Fonds Attijari' },
 ];
 

@@ -114,6 +114,16 @@ export const mentorApi = {
   getMentorProfile: (mentorId) => api.get(`/mentor/${mentorId}/profile`),
 };
 
+// ── Veille Marché ─────────────────────────────────────────────────────────
+export const marketApi = {
+  search: (params) => api.get('/market-intelligence', { params }),
+};
+
+// ── CM Intelligence Startups ──────────────────────────────────────────────
+export const cmIntelligenceApi = {
+  topStartups: (params) => api.get('/cm/intelligence', { params }),
+};
+
 // ── Viabilité Financière ──────────────────────────────────────────────────
 export const financialApi = {
   submit: (data) => api.post('/financial/me', data),

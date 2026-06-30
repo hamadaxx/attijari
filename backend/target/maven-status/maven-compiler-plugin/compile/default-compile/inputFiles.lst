@@ -1,4 +1,5 @@
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\controller\KybController.java
+C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\controller\MarketIntelligenceController.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\dto\request\AuthRequest.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\service\ProfileService.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\model\KybDossier.java
@@ -20,9 +21,11 @@ C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attija
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\config\JwtAuthFilter.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\dto\request\FinancialRequest.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\repository\KybDocumentRepository.java
+C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\controller\CMIntelligenceController.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\model\FinancialData.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\model\Event.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\service\FinancialService.java
+C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\model\MarketIntelligence.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\repository\NotificationRepository.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\service\PublicationService.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\service\KybService.java
@@ -50,8 +53,11 @@ C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attija
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\controller\NotificationController.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\dto\request\ProfileValidationRequest.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\service\FundManagerService.java
+C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\config\RestTemplateConfig.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\exception\BadRequestException.java
+C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\service\StartupScoringService.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\model\KybDocument.java
+C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\service\MarketIntelligenceService.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\dto\request\EventRatingRequest.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\exception\NotFoundException.java
 C:\Users\Welid\Downloads\attijari-growth-engine\backend\src\main\java\com\attijari\growth\controller\AuthController.java

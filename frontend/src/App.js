@@ -16,9 +16,11 @@ import CMKybPage from './pages/cm/CMKybPage';
 import ScorePage from './pages/entrepreneur/ScorePage';
 import KybPage from './pages/entrepreneur/KybPage';
 import FinancialPage from './pages/entrepreneur/FinancialPage';
+import MarketIntelligencePage from './pages/entrepreneur/MarketIntelligencePage';
 import FundDashboard from './pages/fund/FundDashboard';
 import StartupDetailPage from './pages/fund/StartupDetailPage';
 import MentorEventsPage from './pages/mentor/MentorEventsPage';
+import CMStartupIntelligencePage from './pages/cm/CMStartupIntelligencePage';
 
 function PrivateRoute({ children }) {
   const { user } = useAuth();
@@ -42,10 +44,12 @@ export default function App() {
         <Route path="/cm/profiles" element={<PrivateRoute><CMProfilesPage /></PrivateRoute>} />
         <Route path="/cm/publications" element={<PrivateRoute><CMPublicationsPage /></PrivateRoute>} />
         <Route path="/cm/kyb" element={<PrivateRoute><CMKybPage /></PrivateRoute>} />
-        <Route path="/cm/scoring" element={<PrivateRoute><ScoringConfigPage /></PrivateRoute>} />
+        <Route path="/cm/scoring"       element={<PrivateRoute><ScoringConfigPage /></PrivateRoute>} />
+        <Route path="/cm/intelligence"  element={<PrivateRoute><CMStartupIntelligencePage /></PrivateRoute>} />
 
         <Route path="/score"     element={<PrivateRoute><ScorePage /></PrivateRoute>} />
         <Route path="/financial" element={<PrivateRoute><FinancialPage /></PrivateRoute>} />
+        <Route path="/market"    element={<PrivateRoute><MarketIntelligencePage /></PrivateRoute>} />
         <Route path="/kyb"       element={<PrivateRoute><KybPage /></PrivateRoute>} />
 
         <Route path="/fund/dashboard" element={<PrivateRoute><FundDashboard /></PrivateRoute>} />
